@@ -2,7 +2,7 @@ services:
   - type: web
     name: yata
     env: python
-    buildCommand: pip install -r requirements.txt && playwright install
+    buildCommand: pip install -r requirements.txt && playwright install --with-deps
     startCommand: gunicorn yata.wsgi:application
     envVars:
       - key: PYTHON_VERSION
