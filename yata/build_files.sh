@@ -10,6 +10,9 @@ source venv/bin/activate
 echo "Installing requirements"
 python3 -m pip install -r requirements.txt
 
+echo "Installing playwright"
+python3 -m playwright install
+
 echo "Migrating database"
 python3 yata/manage.py makemigrations --noinput
 python3 manage.py migrate --noinput
